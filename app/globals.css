@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+:root {
+  --yellow: #F5C518;
+  --green: #6AAB00;
+  --dark: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --light: #F9F7F2;
+  --muted: #E8E4DA;
+  --gray: #6B6B6B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.6s ease forwards; }
+.animate-slide-right { animation: slideRight 0.7s ease forwards; }
+.animate-scale-in { animation: scaleIn 0.5s ease forwards; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Scroll-triggered reveal system — see components/ScrollReveal.tsx */
+.reveal { opacity: 0; }
+.reveal.reveal-up { transform: translateY(30px); }
+.reveal.reveal-left { transform: translateX(-40px); }
+.reveal.reveal-scale { transform: scale(0.92); }
+.reveal.in-view {
+  transform: none;
+  opacity: 1;
+}
+.reveal.reveal-up.in-view { animation: fadeUp 0.7s ease forwards; }
+.reveal.reveal-fade.in-view { animation: fadeIn 0.7s ease forwards; }
+.reveal.reveal-left.in-view { animation: slideRight 0.7s ease forwards; }
+.reveal.reveal-scale.in-view { animation: scaleIn 0.55s ease forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in-view {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+.brand-yellow { color: var(--yellow); }
+.brand-green { color: var(--green); }
+.bg-brand-yellow { background: var(--yellow); }
+.bg-brand-green { background: var(--green); }
+.bg-dark { background: var(--dark); }
+.bg-charcoal { background: var(--charcoal); }
+.bg-light { background: var(--light); }
+
+.section-pad { padding: 5rem 1.5rem; }
+
+.container-xl {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--yellow);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-yellow:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border: 2px solid var(--yellow);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-outline:hover {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+}
+
+.tag-green {
+  background: var(--green);
+  color: #fff;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.display-heading {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.card-dark {
+  background: var(--charcoal);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card-dark:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.card-light {
+  background: #fff;
+  border: 1px solid var(--muted);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.card-light:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(245,197,24,0.15);
+}
+
+.stripe-accent {
+  position: relative;
+}
+.stripe-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--yellow);
+}
+
+/* Responsive grid helpers — use instead of inline gridTemplateColumns
+   for any layout that needs to stack on mobile (inline styles can't
+   hold media queries, so the column count must live here). */
+.grid-2col { display: grid; grid-template-columns: 1fr 1fr; }
+.grid-2col-alt { display: grid; grid-template-columns: 1fr 1.5fr; }
+.grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); }
+
+.photo-tile { height: 360px; }
+.photo-tile-tall { height: 400px; }
+
+@media (max-width: 900px) {
+  .grid-2col, .grid-2col-alt { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .grid-3col { grid-template-columns: 1fr !important; }
+  .photo-tile { height: 220px; }
+  .photo-tile-tall { height: 260px; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 3.5rem 1rem; }
+  .display-heading { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+  table { font-size: 0.85rem; }
+}
