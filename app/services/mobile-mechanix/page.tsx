@@ -86,6 +86,20 @@ export default function MobileMechanixPage() {
         </div>
       </section>
 
+      {/* MARKETING MATERIALS */}
+      <section className="section-pad" style={{ background: "#1A1A1A" }}>
+        <div className="container-xl" style={{ textAlign: "center" }}>
+          <div className="section-label reveal reveal-up" style={{ marginBottom: "1rem" }}>Ready-Made Marketing</div>
+          <h2 className="reveal reveal-up delay-100" style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 900, color: "#F9F7F2", marginBottom: "1rem" }}>
+            Professional Campaigns.<br /><span style={{ color: "#6AAB00" }}>Built and Ready to Launch.</span>
+          </h2>
+          <p className="reveal reveal-fade delay-200" style={{ color: "#9E9E9E", maxWidth: "560px", margin: "0 auto 2.5rem", lineHeight: 1.8 }}>
+            Every Mobile Mechanix business comes with branded marketing assets already created — no design work, no guesswork.
+          </p>
+          <img src="/promo3.jpg" alt="Mobile Mechanix marketing flyer" className="reveal reveal-scale delay-300" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(106,171,0,0.25)", display: "block", margin: "0 auto" }} />
+        </div>
+      </section>
+
       {/* STATS */}
       <section className="section-pad" style={{ background: "#0D0D0D" }}>
         <div className="container-xl">

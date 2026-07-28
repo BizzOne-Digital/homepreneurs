@@ -51,6 +51,19 @@ export default function PooBeGonePage() {
         </div>
       </section>
 
+      <section className="section-pad" style={{ background: "#1A1A1A" }}>
+        <div className="container-xl" style={{ textAlign: "center" }}>
+          <div className="section-label reveal reveal-up" style={{ marginBottom: "1rem" }}>Ready-Made Marketing</div>
+          <h2 className="reveal reveal-up delay-100" style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 900, color: "#F9F7F2", marginBottom: "1rem" }}>
+            Professional Campaigns.<br /><span style={{ color: "#F5C518" }}>Built and Ready to Launch.</span>
+          </h2>
+          <p className="reveal reveal-fade delay-200" style={{ color: "#9E9E9E", maxWidth: "560px", margin: "0 auto 2.5rem", lineHeight: 1.8 }}>
+            Every Poo Be Gone business comes with branded marketing assets already created — no design work, no guesswork.
+          </p>
+          <img src="/promo4.jpg" alt="Poo Be Gone marketing flyer" className="reveal reveal-scale delay-300" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(245,197,24,0.2)", display: "block", margin: "0 auto" }} />
+        </div>
+      </section>
+
       <section style={{ background: "#F5C518", padding: "5rem 1.5rem", textAlign: "center" }}>
         <div className="container-xl">
           <h2 className="reveal reveal-up" style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 900, color: "#0D0D0D", marginBottom: "1rem" }}>This Business Cleans Up.<br />In Every Sense.</h2>
