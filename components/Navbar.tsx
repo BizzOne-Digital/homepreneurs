@@ -6,7 +6,7 @@ const services = [
   { name: "Poo Be Gone", href: "/services/poo-be-gone" },
   { name: "Porch Pirates", href: "/services/porch-pirates" },
   { name: "Mobile Mechanix", href: "/services/mobile-mechanix" },
-  { name: "BluCallers", href: "/services/blucallers" },
+  { name: "Blu Callers", href: "/services/blucallers" },
   { name: "ECO Panels", href: "/services/eco-panels" },
 ];
 
@@ -31,8 +31,12 @@ export default function Navbar() {
     }}>
       <div className="container-xl" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 1.5rem", height: "68px" }}>
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <img src="/logo.png" alt="Homepreneurs logo" style={{ height: "60px", width: "auto" }} />
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "44px", width: "auto" }} />
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+            <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#F5C518", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</span>
+            <span style={{ fontSize: "0.62rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700 }}>GO2U ECOSYSTEM</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

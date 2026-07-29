@@ -10,9 +10,7 @@ export default function PooBeGonePage() {
             <span className="tag">Go2U Service</span>
             <span className="tag tag-green">Pet Services</span>
           </div>
-          <h1 className="display-heading reveal reveal-up" style={{ color: "#F9F7F2", marginBottom: "0.5rem" }}>
-            <span style={{ color: "#F5C518" }}>Poo Be</span><br />Gone
-          </h1>
+          <img src="/poobegone.png" alt="Poo Be Gone" className="reveal reveal-up" style={{ height: "160px", width: "160px", borderRadius: "50%", marginBottom: "1rem", display: "block" }} />
           <p className="reveal reveal-fade" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "520px", lineHeight: 1.85, margin: "1.5rem 0 2.5rem" }}>
             A recurring, subscription-friendly yard cleanup service for pet owners. Zero inventory, zero equipment overhead, and a customer base that books you every single week.
           </p>

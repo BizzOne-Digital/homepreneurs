@@ -10,9 +10,7 @@ export default function EcoPanelsPage() {
             <span className="tag">Go2U Service</span>
             <span className="tag tag-green">Solar Optimization</span>
           </div>
-          <h1 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>
-            <span style={{ color: "#F5C518" }}>ECO</span><br />Panels
-          </h1>
+          <img src="/panelperfom.png" alt="ECO Panel Performance" className="reveal reveal-up delay-100" style={{ maxWidth: "320px", width: "100%", height: "auto", marginBottom: "0.5rem", display: "block" }} />
           <p className="reveal reveal-fade delay-200" style={{ fontSize: "1.3rem", fontWeight: 800, color: "#6AAB00", margin: "1rem 0" }}>Clean Panels makes Cents.</p>
           <p className="reveal reveal-fade delay-300" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "540px", lineHeight: 1.85, marginBottom: "2.5rem" }}>
             Solar panel performance optimization using the latest European hardware. No chemicals. No streaks. No ladders. Maximum energy output for your clients.

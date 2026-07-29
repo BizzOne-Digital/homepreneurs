@@ -11,9 +11,7 @@ export default function PorchPiratesPage() {
             <span className="tag">Sign Marketing</span>
             <span className="tag tag-green">Contractors & Realtors</span>
           </div>
-          <h1 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>
-            <span style={{ color: "#F5C518" }}>Porch</span><br />Pirates
-          </h1>
+          <img src="/promologo1.jpg" alt="Porch Pirates" className="reveal reveal-up delay-100" style={{ height: "150px", width: "150px", borderRadius: "50%", marginBottom: "1rem", display: "block" }} />
           <p className="reveal reveal-fade delay-200" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "540px", lineHeight: 1.85, margin: "1.5rem 0 1rem" }}>
             Outdoor promotional signage for contractors and realtors. We turn $100 into thousands.
           </p>

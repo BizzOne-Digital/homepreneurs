@@ -7,8 +7,12 @@ export default function Footer() {
       <div className="container-xl">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "3rem", marginBottom: "3rem" }}>
           <div>
-            <div style={{ marginBottom: "1.2rem" }}>
-              <img src="/logo.png" alt="Homepreneurs logo" style={{ height: "70px", width: "auto" }} />
+            <div style={{ marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "48px", width: "auto" }} />
+              <div>
+                <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "#F5C518", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</div>
+                <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700, marginTop: "2px" }}>GO2U ECOSYSTEM</div>
+              </div>
             </div>
             <p style={{ fontSize: "0.9rem", color: "#9E9E9E", lineHeight: 1.7, maxWidth: "260px" }}>
               A new class of entrepreneur building real, income-producing businesses using proven systems and low overhead.
@@ -26,7 +30,7 @@ export default function Footer() {
               ["Poo Be Gone", "/services/poo-be-gone"],
               ["Porch Pirates", "/services/porch-pirates"],
               ["Mobile Mechanix", "/services/mobile-mechanix"],
-              ["BluCallers", "/services/blucallers"],
+              ["Blu Callers", "/services/blucallers"],
               ["ECO Panels", "/services/eco-panels"],
             ].map(([l, h]) => (
               <Link key={h} href={h} style={{ display: "block", color: "#9E9E9E", textDecoration: "none", fontSize: "0.9rem", marginBottom: "0.6rem" }}>{l}</Link>
@@ -40,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: "0.82rem", color: "#555" }}>© 2026 Homepreneurs™. All rights reserved. A BluCallers Company.</p>
+          <p style={{ fontSize: "0.82rem", color: "#555" }}>© 2026 Homepreneurs™. All rights reserved. A Blu Callers Company.</p>
           <p style={{ fontSize: "0.82rem", color: "#555" }}>Built by <span style={{ color: "#F5C518" }}>BizzOne Digital</span></p>
         </div>
       </div>

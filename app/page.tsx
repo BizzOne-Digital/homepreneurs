@@ -49,7 +49,7 @@ const services = [
     ),
   },
   {
-    name: "BluCallers",
+    name: "Blu Callers",
     tag: "Remote Reception",
     desc: "Industry-trained remote operators for busy contractors. Talk the Tech. Answer every call.",
     href: "/services/blucallers",

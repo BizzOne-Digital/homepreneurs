@@ -5,7 +5,7 @@ const businesses = [
   { name: "Poo Be Gone", tag: "Go2U", desc: "Pet waste removal — recurring, subscription-friendly service model.", cashflow: "Week 1–2", overhead: "Minimal", href: "/services/poo-be-gone" },
   { name: "Porch Pirates", tag: "Signs", desc: "Outdoor promotional signage for contractors and realtors.", cashflow: "Week 1", overhead: "Zero", href: "/services/porch-pirates" },
   { name: "Mobile Mechanix", tag: "Go2U", desc: "Mobile automotive maintenance and tire service on demand.", cashflow: "Week 1–2", overhead: "Low", href: "/services/mobile-mechanix" },
-  { name: "BluCallers", tag: "Remote", desc: "Remote reception and call management for busy contractors.", cashflow: "Week 2–3", overhead: "Software only", href: "/services/blucallers" },
+  { name: "Blu Callers", tag: "Remote", desc: "Remote reception and call management for busy contractors.", cashflow: "Week 2–3", overhead: "Software only", href: "/services/blucallers" },
   { name: "ECO Panels", tag: "Go2U", desc: "Solar panel cleaning system using European hardware.", cashflow: "Week 1–2", overhead: "Low", href: "/services/eco-panels" },
 ];
 

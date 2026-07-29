@@ -19,9 +19,7 @@ export default function MobileMechanixPage() {
             <span className="tag">Go2U Service</span>
             <span className="tag tag-green">Automotive</span>
           </div>
-          <h1 className="display-heading" style={{ color: "#F9F7F2", marginBottom: "0.5rem" }}>
-            <span style={{ color: "#F5C518" }}>Mobile</span><br />Mechanix
-          </h1>
+          <img src="/mobile-mechanix-logo.png" alt="Mobile Mechanix" style={{ maxWidth: "360px", width: "100%", height: "auto", marginBottom: "1rem", display: "block" }} />
           <p style={{ fontSize: "1.15rem", color: "#9E9E9E", maxWidth: "560px", lineHeight: 1.85, margin: "1.5rem 0 2.5rem" }}>
             A Go2U automotive service — small maintenance, seasonal tire rotation, and pre-sale vehicle inspections. On-demand, mobile, and built for fast cashflow.
           </p>
@@ -36,10 +34,8 @@ export default function MobileMechanixPage() {
       <section style={{ background: "#1A1A1A", padding: "3rem 1.5rem" }}>
         <div className="container-xl" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
           <div className="reveal reveal-up" style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            <div style={{ background: "#0D0D0D", padding: "1.5rem 2rem", border: "1px solid rgba(245,197,24,0.3)" }}>
-              <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#F5C518" }}>MOBILE</div>
-              <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#6AAB00" }}>MECHANIX</div>
-              <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9E9E9E", fontWeight: 700 }}>A GO2U TIRE SERVICE</div>
+            <div style={{ background: "#0D0D0D", padding: "1rem 1.5rem", border: "1px solid rgba(245,197,24,0.3)" }}>
+              <img src="/mobile-mechanix-logo.png" alt="Mobile Mechanix" style={{ height: "70px", width: "auto", display: "block" }} />
             </div>
             <div>
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#9E9E9E", marginBottom: "8px" }}>Brand Colours</div>
@@ -138,7 +134,7 @@ export default function MobileMechanixPage() {
             {[
               { name: "Poo Be Gone", href: "/services/poo-be-gone" },
               { name: "Porch Pirates", href: "/services/porch-pirates" },
-              { name: "BluCallers", href: "/services/blucallers" },
+              { name: "Blu Callers", href: "/services/blucallers" },
               { name: "ECO Panels", href: "/services/eco-panels" },
             ].map((s, i) => (
               <Link key={s.href} href={s.href} className={`reveal reveal-up ${["","delay-100","delay-200","delay-300","delay-400"][i % 5]}`} style={{ border: "1px solid #E8E4DA", padding: "0.75rem 1.25rem", textDecoration: "none", color: "#0D0D0D", fontWeight: 700, fontSize: "0.9rem", transition: "all 0.2s" }}

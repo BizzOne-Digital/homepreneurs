@@ -10,9 +10,7 @@ export default function BluCallersPage() {
             <span className="tag">Remote Reception</span>
             <span className="tag tag-green">Contractor Tech</span>
           </div>
-          <h1 className="display-heading reveal reveal-up" style={{ color: "#F9F7F2" }}>
-            <span style={{ color: "#F5C518" }}>Blu</span>Callers
-          </h1>
+          <img src="/logocom.png" alt="Blu Callers" className="reveal reveal-up" style={{ height: "110px", width: "auto", marginBottom: "1rem", display: "block" }} />
           <p className="reveal reveal-fade" style={{ fontSize: "1.3rem", fontWeight: 700, color: "#6AAB00", margin: "1rem 0" }}>Talk the Tech.</p>
           <p className="reveal reveal-fade delay-100" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "540px", lineHeight: 1.85, marginBottom: "2.5rem" }}>
             Remote reception for busy contractors using the latest software and industry-trained operators. Never miss a lead again.
@@ -30,7 +28,7 @@ export default function BluCallersPage() {
             <div>
               <div className="section-label reveal reveal-fade" style={{ marginBottom: "1rem" }}>The Service</div>
               <h2 className="reveal reveal-up" style={{ fontSize: "clamp(1.8rem,3vw,2.6rem)", fontWeight: 900, color: "#0D0D0D", marginBottom: "1.5rem" }}>Every Contractor's<br /><span style={{ color: "#6AAB00" }}>Missed Call Is<br />Your Opportunity</span></h2>
-              <p className="reveal reveal-fade" style={{ color: "#555", lineHeight: 1.85, marginBottom: "1.25rem" }}>Contractors are on job sites — not answering phones. BluCallers provides industry-trained remote operators who answer as the client's own team, using the latest scheduling and CRM software.</p>
+              <p className="reveal reveal-fade" style={{ color: "#555", lineHeight: 1.85, marginBottom: "1.25rem" }}>Contractors are on job sites — not answering phones. Blu Callers provides industry-trained remote operators who answer as the client's own team, using the latest scheduling and CRM software.</p>
               <p className="reveal reveal-fade delay-100" style={{ color: "#555", lineHeight: 1.85, marginBottom: "2rem" }}>This is a B2B model — you sign contractor clients on monthly retainers. Recurring, predictable revenue with low overhead.</p>
               <Link href="/contact" className="btn-yellow reveal reveal-up delay-200">Get Investment Details →</Link>
             </div>
@@ -62,12 +60,9 @@ export default function BluCallersPage() {
             Live Ad Campaigns.<br /><span style={{ color: "#F5C518" }}>Already Generating Leads.</span>
           </h2>
           <p className="reveal reveal-fade delay-200" style={{ color: "#9E9E9E", maxWidth: "560px", margin: "0 auto 2.5rem", lineHeight: 1.8 }}>
-            Every BluCallers business comes with proven ad creative and a recognizable brand mark already built — no design work, no guesswork.
+            Every Blu Callers business comes with proven ad creative and a recognizable brand mark already built — no design work, no guesswork.
           </p>
-          <div className="reveal reveal-scale delay-300" style={{ position: "relative", display: "inline-block" }}>
-            <img src="/promoimg1.jpg" alt="BluCallers remote reception ad campaign" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(245,197,24,0.2)", display: "block", borderRadius: "8px" }} />
-            <img src="/promologo3.jpg" alt="BluCallers brand mark" style={{ position: "absolute", bottom: "-1.5rem", right: "-1.5rem", width: "84px", height: "84px", borderRadius: "50%", background: "#fff", border: "3px solid #0D0D0D", boxShadow: "0 6px 20px rgba(0,0,0,0.4)", padding: "10px" }} />
-          </div>
+          <img src="/blucallers-flyer.jpg" alt="Blu Callers remote reception ad campaign" className="reveal reveal-scale delay-300" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(245,197,24,0.2)", display: "block", borderRadius: "8px", margin: "0 auto" }} />
         </div>
       </section>
 
