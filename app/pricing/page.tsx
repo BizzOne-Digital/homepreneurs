@@ -2,10 +2,10 @@
 import Link from "next/link";
 
 const businesses = [
-  { name: "Poo Be Gone", tag: "Go2U", desc: "Pet waste removal — recurring, subscription-friendly service model.", cashflow: "Week 1–2", overhead: "Minimal", href: "/services/poo-be-gone" },
+  { name: "Poo Be Gone", tag: "Go2U", desc: "Pet waste removal — recurring, subscription-friendly service model.", cashflow: "Week 1–2", overhead: "Zero", href: "/services/poo-be-gone" },
   { name: "Porch Pirates", tag: "Signs", desc: "Outdoor promotional signage for contractors and realtors.", cashflow: "Week 1", overhead: "Zero", href: "/services/porch-pirates" },
   { name: "Mobile Mechanix", tag: "Go2U", desc: "Mobile automotive maintenance and tire service on demand.", cashflow: "Week 1–2", overhead: "Low", href: "/services/mobile-mechanix" },
-  { name: "Blu Callers", tag: "Remote", desc: "Remote reception and call management for busy contractors.", cashflow: "Week 2–3", overhead: "Software only", href: "/services/blucallers" },
+  { name: "Blu Callers", tag: "Remote", desc: "Remote reception and call management for busy contractors.", cashflow: "Week 2–3", overhead: "Zero", href: "/services/blucallers" },
   { name: "ECO Panels", tag: "Go2U", desc: "Solar panel cleaning system using European hardware.", cashflow: "Week 1–2", overhead: "Low", href: "/services/eco-panels" },
 ];
 
@@ -94,7 +94,7 @@ export default function PricingPage() {
           <div className="reveal reveal-up" style={{ marginTop: "2rem", background: "#0D0D0D", padding: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
             <div>
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", color: "#F5C518", textTransform: "uppercase", marginBottom: "0.5rem" }}>Stack Multiple Businesses</div>
-              <p className="reveal reveal-fade delay-100" style={{ color: "#9E9E9E", fontSize: "0.95rem" }}>Own more than one Homepreneur™ business and build a stacked-income portfolio — all under $50K each.</p>
+              <p className="reveal reveal-fade delay-100" style={{ color: "#9E9E9E", fontSize: "0.95rem" }}>Own more than one Homepreneur™ business and build a stacked-income portfolio — all under $50K each. <span style={{ color: "#F5C518", fontWeight: 700 }}>"Stacking"</span> means adding a second or third location, or another business from the EcoSystem, to layer additional revenue streams on top of what you already earn.</p>
             </div>
             <Link href="/contact" className="btn-yellow reveal reveal-up delay-200">Talk to Us About Stacking →</Link>
           </div>

@@ -32,7 +32,10 @@ export default function Navbar() {
       <div className="container-xl" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 1.5rem", height: "68px" }}>
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-          <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "44px", width: "auto" }} />
+          <span style={{ position: "relative", display: "inline-flex" }}>
+            <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "44px", width: "auto" }} />
+            <span style={{ position: "absolute", top: "-2px", right: "-10px", fontSize: "0.6rem", fontWeight: 800, color: "#F5354D" }}>™</span>
+          </span>
           <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
             <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#F5C518", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</span>
             <span style={{ fontSize: "0.62rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700 }}>GO2U ECOSYSTEM</span>
@@ -65,6 +68,7 @@ export default function Navbar() {
             )}
           </div>
           <Link href="/pricing" style={navLink}>Pricing</Link>
+          <Link href="/quiz" style={navLink}>Find My Match</Link>
           <Link href="/contact" style={{ ...navLink }}>
             <span className="btn-yellow" style={{ padding: "0.5rem 1.2rem", fontSize: "0.85rem" }}>Get Started</span>
           </Link>
@@ -87,6 +91,7 @@ export default function Navbar() {
             { label: "Home", href: "/" },
             { label: "About", href: "/about" },
             { label: "Pricing", href: "/pricing" },
+            { label: "Find My Match", href: "/quiz" },
             { label: "Contact", href: "/contact" },
             ...services.map(s => ({ label: s.name, href: s.href })),
           ].map(item => (

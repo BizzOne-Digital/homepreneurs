@@ -1,9 +1,24 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", looking: "", timeline: "", reach: "" });
+  return (
+    <Suspense fallback={null}>
+      <ContactForm />
+    </Suspense>
+  );
+}
+
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", business: "", looking: "", timeline: "", reach: "" });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const business = searchParams.get("business");
+    if (business) setForm(p => ({ ...p, business }));
+  }, [searchParams]);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [e.target.name]: e.target.value }));
@@ -85,6 +100,20 @@ export default function ContactPage() {
                       />
                     </div>
                   ))}
+                </div>
+
+                <div className="reveal reveal-up" style={{ marginBottom: "1.25rem" }}>
+                  <label style={{ display: "block", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#555", marginBottom: "6px" }}>Which business interests you?</label>
+                  <select name="business" value={form.business} onChange={handle}
+                    style={{ width: "100%", padding: "0.75rem 1rem", border: "1px solid #E8E4DA", fontSize: "0.95rem", outline: "none", fontFamily: "inherit", color: form.business ? "#0D0D0D" : "#9E9E9E", background: "#fff" }}>
+                    <option value="">Select a business</option>
+                    <option>Poo Be Gone</option>
+                    <option>Porch Pirates</option>
+                    <option>Mobile Mechanix</option>
+                    <option>Blu Callers</option>
+                    <option>ECO Panels</option>
+                    <option>Not sure yet</option>
+                  </select>
                 </div>
 
                 <div className="reveal reveal-up" style={{ marginBottom: "1.25rem" }}>

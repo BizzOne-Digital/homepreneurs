@@ -8,7 +8,10 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "3rem", marginBottom: "3rem" }}>
           <div>
             <div style={{ marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-              <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "48px", width: "auto" }} />
+              <span style={{ position: "relative", display: "inline-flex" }}>
+                <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "48px", width: "auto" }} />
+                <span style={{ position: "absolute", top: "-2px", right: "-10px", fontSize: "0.65rem", fontWeight: 800, color: "#F5354D" }}>™</span>
+              </span>
               <div>
                 <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "#F5C518", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</div>
                 <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700, marginTop: "2px" }}>GO2U ECOSYSTEM</div>

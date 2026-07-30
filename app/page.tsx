@@ -142,6 +142,7 @@ export default function Home() {
               <Link href="/contact" className="btn-yellow">Get Your Business →</Link>
               <Link href="/about" className="btn-outline">Learn More</Link>
             </div>
+            <Link href="/quiz" style={{ display: "inline-block", marginTop: "1.25rem", color: "#F5C518", fontWeight: 700, fontSize: "0.9rem", textDecoration: "underline" }}>Not sure which one? Take the 60-second quiz →</Link>
           </div>
         </div>
 
