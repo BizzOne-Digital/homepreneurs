@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
               <span style={{ position: "relative", display: "inline-flex" }}>
-                <img src="/hlogotype.png" alt="Homepreneurs" style={{ height: "48px", width: "auto" }} />
+                <img src="/newlogo.png" alt="Homepreneurs" style={{ height: "48px", width: "auto" }} />
                 <span style={{ position: "absolute", top: "-2px", right: "-10px", fontSize: "0.65rem", fontWeight: 800, color: "#F5354D" }}>™</span>
               </span>
               <div>

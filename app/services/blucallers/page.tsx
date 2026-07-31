@@ -62,7 +62,7 @@ export default function BluCallersPage() {
           <p className="reveal reveal-fade delay-200" style={{ color: "#9E9E9E", maxWidth: "560px", margin: "0 auto 2.5rem", lineHeight: 1.8 }}>
             Every Blu Callers business comes with proven ad creative and a recognizable brand mark already built — no design work, no guesswork.
           </p>
-          <img src="/blucallers-flyer.jpg" alt="Blu Callers remote reception ad campaign" className="reveal reveal-scale delay-300" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(245,197,24,0.2)", display: "block", borderRadius: "8px", margin: "0 auto" }} />
+          <img src="/blucallers-flyer.png" alt="Blu Callers remote reception ad campaign" className="reveal reveal-scale delay-300" style={{ maxWidth: "380px", width: "100%", height: "auto", border: "1px solid rgba(245,197,24,0.2)", display: "block", borderRadius: "8px", margin: "0 auto" }} />
         </div>
       </section>
 
