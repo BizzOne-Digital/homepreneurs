@@ -37,7 +37,7 @@ export default function Navbar() {
             <span style={{ position: "absolute", top: "-2px", right: "-10px", fontSize: "0.6rem", fontWeight: 800, color: "#F5354D" }}>™</span>
           </span>
           <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-            <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#E2231A", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</span>
+            <span style={{ fontSize: "1.4rem", fontWeight: 900, color: "#F9F7F2", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</span>
             <span style={{ fontSize: "0.62rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700 }}>GO2U ECOSYSTEM</span>
           </div>
         </Link>

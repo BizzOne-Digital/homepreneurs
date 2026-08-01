@@ -13,7 +13,7 @@ export default function Footer() {
                 <span style={{ position: "absolute", top: "-2px", right: "-10px", fontSize: "0.65rem", fontWeight: 800, color: "#F5354D" }}>™</span>
               </span>
               <div>
-                <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "#E2231A", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</div>
+                <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "#F9F7F2", letterSpacing: "-0.03em" }}>HOMEPRENEURS™</div>
                 <div style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#6AAB00", fontWeight: 700, marginTop: "2px" }}>GO2U ECOSYSTEM</div>
               </div>
             </div>
