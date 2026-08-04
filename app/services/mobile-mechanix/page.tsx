@@ -129,7 +129,7 @@ export default function MobileMechanixPage() {
       {/* Other services */}
       <section className="section-pad" style={{ background: "#F9F7F2" }}>
         <div className="container-xl">
-          <h3 className="reveal reveal-up" style={{ fontSize: "1.2rem", fontWeight: 900, color: "#0D0D0D", marginBottom: "1.5rem" }}>Other Homepreneur™ Businesses</h3>
+          <h3 className="reveal reveal-up" style={{ fontSize: "1.2rem", fontWeight: 900, color: "#0D0D0D", marginBottom: "1.5rem" }}>Other Homepreneurs™ Businesses</h3>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             {[
               { name: "Poo Be Gone", href: "/services/poo-be-gone" },

@@ -4,7 +4,7 @@ const values = [
   { icon: <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z" stroke="#F5C518" strokeWidth="1.5" strokeLinejoin="round"/></svg>, title: "Proven Systems", desc: "Every business model has been tested and refined for fast cashflow and repeatable success." },
   { icon: <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 16h6l4-10 6 20 4-10h8" stroke="#F5C518" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>, title: "Low Overhead", desc: "No equipment costs, no commercial leases, no franchise royalties eating your profits." },
   { icon: <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="5" stroke="#F5C518" strokeWidth="1.5"/><path d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#F5C518" strokeWidth="1.5" strokeLinecap="round"/><path d="M20 14l4 2M20 18l4-2" stroke="#6AAB00" strokeWidth="1.5" strokeLinecap="round"/></svg>, title: "Full Ownership", desc: "You license the system — but the business is yours. No approval chains, no territory disputes." },
-  { icon: <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#F5C518" strokeWidth="1.5"/><path d="M10 16l4 4 8-8" stroke="#6AAB00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>, title: "Stack Your Income", desc: "Own multiple Homepreneur™ businesses and build a diversified, stacked-income portfolio." },
+  { icon: <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#F5C518" strokeWidth="1.5"/><path d="M10 16l4 4 8-8" stroke="#6AAB00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>, title: "Stack Your Income", desc: "Own multiple Homepreneurs™ businesses and build a diversified, stacked-income portfolio." },
 ];
 
 const steps = [
@@ -26,7 +26,7 @@ export default function AboutPage() {
             We Built a Better Way<br /><span style={{ color: "#F5C518" }}>to Own a Business</span>
           </h1>
           <p className="reveal reveal-fade delay-200" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "560px", lineHeight: 1.85 }}>
-            The Homepreneur™ EcoSystem was created for people who want the structure and support of a franchise — without the $200K+ price tag, rigid rules, or limited territory.
+            The Homepreneurs™ EcoSystem was created for people who want the structure and support of a franchise — without the $300K+ price tag, rigid rules, or limited territory.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default function AboutPage() {
         <div className="container-xl">
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <div className="section-label reveal reveal-up" style={{ marginBottom: "1rem" }}>What We Stand For</div>
-            <h2 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>The Homepreneur™<br /><span style={{ color: "#F5C518" }}>Difference</span></h2>
+            <h2 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>The Homepreneurs™<br /><span style={{ color: "#F5C518" }}>Difference</span></h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
             {values.map((v, i) => (

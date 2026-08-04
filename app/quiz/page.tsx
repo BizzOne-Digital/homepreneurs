@@ -125,6 +125,7 @@ export default function QuizPage() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<Record<BizKey, number>>({ pbg: 0, pp: 0, mm: 0, bc: 0, ep: 0 });
+  const [answers, setAnswers] = useState<{ header: string; label: string }[]>([]);
 
   const total = QUESTIONS.length;
   const q = QUESTIONS[step];
@@ -138,11 +139,15 @@ export default function QuizPage() {
       });
     }
     setScores(next);
+    const nextAnswers = [...answers, { header: q.header, label: opt.label }];
+    setAnswers(nextAnswers);
 
     if (step + 1 < total) {
       setStep(step + 1);
     } else {
       const winner = (Object.keys(next) as BizKey[]).sort((a, b) => next[b] - next[a])[0];
+      const summary = nextAnswers.map(a => `${a.header}: ${a.label}`).join(" | ");
+      sessionStorage.setItem("quizAnswers", summary);
       router.push(`/contact?business=${encodeURIComponent(BUSINESSES[winner])}`);
     }
   };

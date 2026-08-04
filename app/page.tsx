@@ -136,7 +136,7 @@ export default function Home() {
               <span style={{ color: "#6AAB00" }}>Under $50K.</span>
             </h1>
             <p style={{ fontSize: "1.1rem", color: "#9E9E9E", lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: "480px", margin: "0 auto 2.5rem" }}>
-              The Homepreneur™ EcoSystem is a proven alternative to traditional franchising — home-based businesses built for fast cashflow, no equipment, and zero rigid rules.
+              The Homepreneurs™ EcoSystem is a proven alternative to traditional franchising — home-based businesses built for fast cashflow, no equipment, and zero rigid rules.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
               <Link href="/contact" className="btn-yellow">Get Your Business →</Link>
@@ -180,7 +180,7 @@ export default function Home() {
                 <span style={{ color: "#6AAB00" }}>Something Better.</span>
               </h2>
               <p className="reveal reveal-fade delay-100" style={{ fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "1.5rem" }}>
-                Traditional franchises lock you into one model, one territory, and one rigid playbook — often for $200K+. Homepreneurs™ licenses proven business systems that you own and operate from home, with full flexibility to stack multiple income streams.
+                Traditional franchises lock you into one model, one territory, and one rigid playbook — often for $300K+. Homepreneurs™ licenses proven business systems that you own and operate from home, with full flexibility to stack multiple income streams.
               </p>
               <p className="reveal reveal-fade delay-200" style={{ fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "2rem" }}>
                 Every business in our EcoSystem is under $50K all-in. No equipment to buy. No commercial lease. No royalty stranglehold. Just proven systems built for fast cashflow.

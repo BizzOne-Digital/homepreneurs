@@ -41,7 +41,7 @@ export default function PricingPage() {
       <section style={{ background: "#F5C518", padding: "3rem 1.5rem" }}>
         <div className="container-xl" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}>
           <div className="reveal reveal-up">
-            <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", color: "#333", marginBottom: "0.5rem" }}>The Homepreneur™ Promise</div>
+            <div style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", color: "#333", marginBottom: "0.5rem" }}>The Homepreneurs™ Promise</div>
             <p className="reveal reveal-fade delay-100" style={{ fontSize: "1.1rem", fontWeight: 700, color: "#0D0D0D", maxWidth: "600px" }}>
               Every business in our EcoSystem is priced for real people — not corporations. No hidden fees, no royalty trap, no territory battles.
             </p>
@@ -94,7 +94,7 @@ export default function PricingPage() {
           <div className="reveal reveal-up" style={{ marginTop: "2rem", background: "#0D0D0D", padding: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
             <div>
               <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.2em", color: "#F5C518", textTransform: "uppercase", marginBottom: "0.5rem" }}>Stack Multiple Businesses</div>
-              <p className="reveal reveal-fade delay-100" style={{ color: "#9E9E9E", fontSize: "0.95rem" }}>Own more than one Homepreneur™ business and build a stacked-income portfolio — all under $50K each. <span style={{ color: "#F5C518", fontWeight: 700 }}>"Stacking"</span> means adding a second or third location, or another business from the EcoSystem, to layer additional revenue streams on top of what you already earn.</p>
+              <p className="reveal reveal-fade delay-100" style={{ color: "#9E9E9E", fontSize: "0.95rem" }}>Own more than one Homepreneurs™ business and build a stacked-income portfolio — all under $50K each. <span style={{ color: "#F5C518", fontWeight: 700 }}>"Stacking"</span> means adding a second or third location, or another business from the EcoSystem, to layer additional revenue streams on top of what you already earn.</p>
             </div>
             <Link href="/contact" className="btn-yellow reveal reveal-up delay-200">Talk to Us About Stacking →</Link>
           </div>
@@ -106,7 +106,7 @@ export default function PricingPage() {
         <div className="container-xl">
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <div className="section-label reveal reveal-up" style={{ marginBottom: "1rem" }}>Side by Side</div>
-            <h2 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>Homepreneur™ vs.<br /><span style={{ color: "#F5C518" }}>Traditional Franchise</span></h2>
+            <h2 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2" }}>Homepreneurs™ vs.<br /><span style={{ color: "#F5C518" }}>Traditional Franchise</span></h2>
           </div>
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -114,7 +114,7 @@ export default function PricingPage() {
                 <tr>
                   <th style={{ padding: "1rem 1.25rem", textAlign: "left", color: "#9E9E9E", fontSize: "0.8rem", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Feature</th>
                   <th style={{ padding: "1rem 1.25rem", textAlign: "center", color: "#9E9E9E", fontSize: "0.8rem", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Traditional Franchise</th>
-                  <th style={{ padding: "1rem 1.25rem", textAlign: "center", background: "rgba(245,197,24,0.08)", color: "#F5C518", fontSize: "0.8rem", fontWeight: 700, borderBottom: "1px solid rgba(245,197,24,0.3)", borderLeft: "1px solid rgba(245,197,24,0.3)", borderRight: "1px solid rgba(245,197,24,0.3)" }}>Homepreneur™</th>
+                  <th style={{ padding: "1rem 1.25rem", textAlign: "center", background: "rgba(245,197,24,0.08)", color: "#F5C518", fontSize: "0.8rem", fontWeight: 700, borderBottom: "1px solid rgba(245,197,24,0.3)", borderLeft: "1px solid rgba(245,197,24,0.3)", borderRight: "1px solid rgba(245,197,24,0.3)" }}>Homepreneurs™</th>
                 </tr>
               </thead>
               <tbody>

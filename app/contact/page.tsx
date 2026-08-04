@@ -12,28 +12,50 @@ export default function ContactPage() {
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", business: "", looking: "", timeline: "", reach: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", business: "", looking: "", timeline: "", reach: "", quizAnswers: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const business = searchParams.get("business");
-    if (business) setForm(p => ({ ...p, business }));
+    const quizAnswers = sessionStorage.getItem("quizAnswers") || "";
+    if (business || quizAnswers) setForm(p => ({ ...p, business: business || p.business, quizAnswers }));
   }, [searchParams]);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
+  const handleSubmit = async () => {
+    setError("");
+    setSending(true);
+    try {
+      const res = await fetch("/api/send-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong sending your application. Please call or email us directly.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <>
       {/* HERO */}
-      <section style={{ background: "#0D0D0D", padding: "10rem 1.5rem 6rem" }}>
-        <div className="container-xl">
+      <section style={{ background: "#0D0D0D", padding: "10rem 1.5rem 6rem", position: "relative", overflow: "hidden" }}>
+        <img src="/newlogo.png" alt="" style={{ position: "absolute", left: "-40px", bottom: "-40px", width: "260px", height: "auto", opacity: 0.15, pointerEvents: "none" }} />
+        <div className="container-xl" style={{ position: "relative" }}>
           <div className="tag reveal reveal-up" style={{ marginBottom: "1.5rem" }}>Get Started</div>
           <h1 className="display-heading reveal reveal-up delay-100" style={{ color: "#F9F7F2", marginBottom: "1.5rem" }}>
             Let's Find Your<br /><span style={{ color: "#F5C518" }}>Right Business</span>
           </h1>
           <p className="reveal reveal-fade delay-200" style={{ fontSize: "1.1rem", color: "#9E9E9E", maxWidth: "500px", lineHeight: 1.85 }}>
-            Fill out the form below and our team will be in touch within 24 hours to walk you through the right Homepreneur™ opportunity.
+            Fill out the form below and our team will be in touch within 24 hours to walk you through the right Homepreneurs™ opportunity.
           </p>
         </div>
       </section>
@@ -159,8 +181,9 @@ function ContactForm() {
                   </select>
                 </div>
 
-                <button onClick={() => setSubmitted(true)} className="btn-yellow reveal reveal-up delay-400" style={{ width: "100%", justifyContent: "center", fontSize: "1rem" }}>
-                  Submit Application →
+                {error && <p style={{ color: "#C0392B", fontSize: "0.85rem", marginBottom: "1rem" }}>{error}</p>}
+                <button onClick={handleSubmit} disabled={sending} className="btn-yellow reveal reveal-up delay-400" style={{ width: "100%", justifyContent: "center", fontSize: "1rem", opacity: sending ? 0.7 : 1, cursor: sending ? "default" : "pointer" }}>
+                  {sending ? "Sending..." : "Submit Application →"}
                 </button>
                 <p className="reveal reveal-fade" style={{ fontSize: "0.78rem", color: "#9E9E9E", textAlign: "center", marginTop: "1rem" }}>We respond within 24 hours. No spam, ever.</p>
               </div>
