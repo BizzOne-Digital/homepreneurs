@@ -14,7 +14,7 @@ export async function POST(req: Request) {
   const toEmail = process.env.TO_EMAIL || smtpUser;
 
   if (!smtpUser || !smtpPass) {
-    console.error("SMTP_USER / SMTP_PASS not configured — application email not sent.", data);
+    console.error("error: SMTP_USER / SMTP_PASS not configured — application email not sent.", data);
     return NextResponse.json({ error: "Email is not configured yet. Application was not sent." }, { status: 500 });
   }
 
@@ -44,16 +44,17 @@ export async function POST(req: Request) {
   `;
 
   try {
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: smtpUser,
       to: toEmail,
       replyTo: email,
       subject: `New Application — ${business || "Homepreneurs"} (${name})`,
       html,
     });
+    console.log(`send: application email sent to ${toEmail} (messageId: ${info.messageId}) — ${name} / ${business || "no business selected"}`);
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Failed to send application email", err);
+    console.error(`error: failed to send application email for ${name} (${email}) —`, err);
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 }
