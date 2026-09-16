@@ -5,8 +5,8 @@ export async function POST(req: Request) {
   const data = await req.json();
   const { name, email, phone, city, province, business, looking, timeline, reach, quizAnswers } = data;
 
-  if (!name || !email) {
-    return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
+  if (!name || (!email && !phone)) {
+    return NextResponse.json({ error: "Name and at least an email or phone number are required." }, { status: 400 });
   }
 
   const smtpUser = process.env.SMTP_USER;
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
   const rows: [string, string][] = [
     ["Name", name],
-    ["Email", email],
+    ["Email", email || "—"],
     ["Phone", phone || "—"],
     ["City", city || "—"],
     ["Province/State", province || "—"],
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     const info = await transporter.sendMail({
       from: smtpUser,
       to: toEmail,
-      replyTo: email,
+      ...(email ? { replyTo: email } : {}),
       subject: `New Application — ${business || "Homepreneurs"} (${name})`,
       html,
     });

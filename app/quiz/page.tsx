@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type BizKey = "pbg" | "pp" | "mm" | "bc" | "ep";
 
@@ -122,10 +122,16 @@ const QUESTIONS: Question[] = [
 ];
 
 export default function QuizPage() {
-  const router = useRouter();
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<Record<BizKey, number>>({ pbg: 0, pp: 0, mm: 0, bc: 0, ep: 0 });
   const [answers, setAnswers] = useState<{ header: string; label: string }[]>([]);
+  const [finished, setFinished] = useState(false);
+  const [summary, setSummary] = useState("");
+  const [matchedBusiness, setMatchedBusiness] = useState("");
+  const [lead, setLead] = useState({ name: "", phone: "", email: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
   const total = QUESTIONS.length;
   const q = QUESTIONS[step];
@@ -146,11 +152,79 @@ export default function QuizPage() {
       setStep(step + 1);
     } else {
       const winner = (Object.keys(next) as BizKey[]).sort((a, b) => next[b] - next[a])[0];
-      const summary = nextAnswers.map(a => `${a.header}: ${a.label}`).join(" | ");
-      sessionStorage.setItem("quizAnswers", summary);
-      router.push(`/contact?business=${encodeURIComponent(BUSINESSES[winner])}`);
+      setMatchedBusiness(BUSINESSES[winner]);
+      setSummary(nextAnswers.map(a => `${a.header}: ${a.label}`).join(" | "));
+      setFinished(true);
     }
   };
+
+  const handleLead = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setLead(p => ({ ...p, [e.target.name]: e.target.value }));
+
+  const submitLead = async () => {
+    setError("");
+    if (!lead.name || (!lead.email && !lead.phone)) {
+      setError("Please leave your name and at least an email or phone number.");
+      return;
+    }
+    setSending(true);
+    try {
+      const res = await fetch("/api/send-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: lead.name, email: lead.email, phone: lead.phone, business: matchedBusiness, quizAnswers: summary }),
+      });
+      if (!res.ok) throw new Error();
+      setSent(true);
+    } catch {
+      setError("Something went wrong sending your results. Please call or email us directly.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  if (finished) {
+    return (
+      <section style={{ background: "#0D0D0D", minHeight: "100vh", padding: "10rem 1.5rem 6rem", display: "flex", alignItems: "center" }}>
+        <div className="container-xl" style={{ maxWidth: "560px" }}>
+          {sent ? (
+            <>
+              <div className="tag tag-green" style={{ marginBottom: "1.5rem" }}>Quiz Complete</div>
+              <h1 className="display-heading" style={{ color: "#F9F7F2", fontSize: "clamp(1.6rem,3vw,2.4rem)", marginBottom: "1rem" }}>
+                Thank You for Taking Our Quiz!
+              </h1>
+              <p style={{ color: "#9E9E9E", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem" }}>
+                One of our team members will reach out to you personally with your results and the business that fits you best.
+              </p>
+              <Link href="/" className="btn-yellow">Back to Home →</Link>
+            </>
+          ) : (
+            <>
+              <div className="tag" style={{ marginBottom: "1.5rem" }}>Almost Done</div>
+              <h1 className="display-heading" style={{ color: "#F9F7F2", fontSize: "clamp(1.6rem,3vw,2.4rem)", marginBottom: "1rem" }}>
+                Thank You for Taking Our Quiz!
+              </h1>
+              <p style={{ color: "#9E9E9E", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem" }}>
+                Please leave your name, number, and email so one of our team members can reach out with your results.
+              </p>
+              <div style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
+                <input name="name" placeholder="Full Name" value={lead.name} onChange={handleLead}
+                  style={{ padding: "0.85rem 1rem", background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.1)", color: "#F9F7F2", fontSize: "0.95rem", outline: "none", fontFamily: "inherit" }} />
+                <input name="phone" placeholder="Phone Number" value={lead.phone} onChange={handleLead}
+                  style={{ padding: "0.85rem 1rem", background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.1)", color: "#F9F7F2", fontSize: "0.95rem", outline: "none", fontFamily: "inherit" }} />
+                <input name="email" type="email" placeholder="Email Address" value={lead.email} onChange={handleLead}
+                  style={{ padding: "0.85rem 1rem", background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.1)", color: "#F9F7F2", fontSize: "0.95rem", outline: "none", fontFamily: "inherit" }} />
+              </div>
+              {error && <p style={{ color: "#E2231A", fontSize: "0.85rem", marginBottom: "1rem" }}>{error}</p>}
+              <button onClick={submitLead} disabled={sending} className="btn-yellow" style={{ width: "100%", justifyContent: "center", opacity: sending ? 0.7 : 1 }}>
+                {sending ? "Sending..." : "Get My Results →"}
+              </button>
+            </>
+          )}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section style={{ background: "#0D0D0D", minHeight: "100vh", padding: "10rem 1.5rem 6rem" }}>
