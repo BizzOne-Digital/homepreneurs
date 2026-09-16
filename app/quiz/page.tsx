@@ -172,7 +172,7 @@ export default function QuizPage() {
       const res = await fetch("/api/send-application", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: lead.name, email: lead.email, phone: lead.phone, business: matchedBusiness, quizAnswers: summary }),
+        body: JSON.stringify({ name: lead.name, email: lead.email, phone: lead.phone, business: matchedBusiness, quizAnswers: summary, referredBy: localStorage.getItem("homepreneurs_ref") || "" }),
       });
       if (!res.ok) throw new Error();
       setSent(true);

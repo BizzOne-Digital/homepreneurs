@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ReferralTracker from "@/components/ReferralTracker";
 
 export const metadata: Metadata = {
   title: "Homepreneurs™ — Build Your Own Income-Producing Business",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ScrollReveal />
+        <ReferralTracker />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const data = await req.json();
-  const { name, email, phone, city, province, business, looking, timeline, reach, quizAnswers } = data;
+  const { name, email, phone, city, province, business, looking, timeline, reach, quizAnswers, referredBy } = data;
 
   if (!name || (!email && !phone)) {
     return NextResponse.json({ error: "Name and at least an email or phone number are required." }, { status: 400 });
@@ -33,6 +33,7 @@ export async function POST(req: Request) {
     ["How long looking to invest", looking || "—"],
     ["Ready to start", timeline || "—"],
     ["Preferred contact method", reach || "—"],
+    ["Referred By", referredBy || "Direct / Unknown"],
   ];
 
   const html = `
@@ -48,7 +49,7 @@ export async function POST(req: Request) {
       from: smtpUser,
       to: toEmail,
       ...(email ? { replyTo: email } : {}),
-      subject: `New Application — ${business || "Homepreneurs"} (${name})`,
+      subject: `New Application — ${business || "Homepreneurs"} (${name})${referredBy ? ` [via ${referredBy}]` : ""}`,
       html,
     });
     console.log(`send: application email sent to ${toEmail} (messageId: ${info.messageId}) — ${name} / ${business || "no business selected"}`);

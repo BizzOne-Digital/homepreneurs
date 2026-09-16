@@ -12,7 +12,7 @@ export default function ContactPage() {
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", business: "", looking: "", timeline: "", reach: "", quizAnswers: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", province: "", business: "", looking: "", timeline: "", reach: "", quizAnswers: "", referredBy: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -20,7 +20,8 @@ function ContactForm() {
   useEffect(() => {
     const business = searchParams.get("business");
     const quizAnswers = sessionStorage.getItem("quizAnswers") || "";
-    if (business || quizAnswers) setForm(p => ({ ...p, business: business || p.business, quizAnswers }));
+    const referredBy = localStorage.getItem("homepreneurs_ref") || "";
+    if (business || quizAnswers || referredBy) setForm(p => ({ ...p, business: business || p.business, quizAnswers, referredBy }));
   }, [searchParams]);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
